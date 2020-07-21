@@ -8,6 +8,8 @@ queries = {
     'astropy-citations': (
         'property:refereed citations(2018AJ....156..123A) '
         'OR citations(2013A&A...558A..33A)'),
+    'astropy-fulltext': (
+        'full:"astropy" property:"refereed" collection:"astronomy"'),
     'python-fulltext': (
         'full:"python" property:"refereed" collection:"astronomy"'),
     'idl-fulltext': (
@@ -15,7 +17,9 @@ queries = {
     'matlab-fulltext': (
         'full:"matlab" property:"refereed" collection:"astronomy"'),
     'julia-fulltext': (
-        'full:"julia" property:"refereed" collection:"astronomy"')
+        'full:"julia" property:"refereed" collection:"astronomy"'),
+    'iraf-fulltext': (
+        'full:"iraf" property:"refereed" collection:"astronomy"'),
 }
 
 # One up from the scripts directory:
@@ -27,6 +31,7 @@ for slug, query in queries.items():
     filename = os.path.join(cache_path, f'{slug}.csv')
     if os.path.exists(filename):
         print(f"Results exist for '{slug}' - skipping...")
+        continue
     q, papers_df = get_papers(query, rows_per_page=1000, max_pages=100)
     print(q.response.get_ratelimits())
     papers_df.to_csv(filename)
