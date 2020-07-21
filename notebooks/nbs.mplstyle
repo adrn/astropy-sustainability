@@ -47,3 +47,4 @@ grid.linestyle: -
 grid.linewidth: 0.75     # in points
 
 image.cmap: magma
+axes.prop_cycle: cycler(color=['k', 'tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan'])
