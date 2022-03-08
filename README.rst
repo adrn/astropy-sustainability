@@ -11,3 +11,6 @@ and for easy copy-pasting into talk slides and discussions.
 
 This is very much a work in progress, but see some examples here:
 https://adrian.pw/astropy-sustainability
+
+The goal is to move this into the astropy organization, but I am just prototyping
+ideas here!
